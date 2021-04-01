@@ -1,0 +1,18 @@
+body{
+    padding: 0;
+
+
+}
+
+.cameron-genres__display{
+    width: 250px;
+    background-color: palevioletred;
+}
+
+.cameron-genres{
+    display: flex;
+    justify-content: center;
+
+}
+
+
