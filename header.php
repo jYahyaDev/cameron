@@ -10,21 +10,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <!--    <link rel="stylesheet" href="style.css">-->
     <style>
+        *{
+            box-sizing: border-box;
+        }
+
     body{
     padding: 0;
         background-color: gray;
     }
 
-    .cameron-genres__display{
-    width: 250px;
-    background-color: palevioletred;
+    a{
+        text-decoration: none;
+        color:inherit;
     }
 
-    .cameron-genres{
-    display: flex;
-    justify-content: center;
-
+    button{
+        margin-bottom: 2px;
     }
+    .cameron-artistes-liste{
+        display: flex;
+    }
+    .cameron-artistes-liste__display{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: content-box;
+        height: auto;
+        background-color: aquamarine;
+        padding: 10px;
+        margin: 5px;
+    }
+
+
+    .cameron-artistes-liste__btn{
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+
+        width: 80%;
+        margin: 0 auto;
+
+        white-space: nowrap;
+    }
+
     </style>
 
 

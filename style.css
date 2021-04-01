@@ -4,9 +4,16 @@ body{
 
 }
 
+.cameron-artistes-liste{
+    display: flex;
+}
+
+
+
 .cameron-genres__display{
     width: 250px;
     background-color: palevioletred;
+    display: flex;
 }
 
 .cameron-genres{

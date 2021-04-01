@@ -2,6 +2,8 @@
 
   <?php
 
+
+
   $pdo = getPdo();
 
   $requete ='SELECT artiste_id, artiste_name, style_name, style_id, genre_name 
@@ -14,7 +16,20 @@
   $stmt->execute();
   $artistes = $stmt->fetchAll();
 
-  $styles = readAll('styles');
+
+$pdo = getPdo();
+  $requete = "SELECT * FROM `styles`
+                  JOIN assoc_artistes_styles ON assoc_style_id = style_id";
+                  /*WHERE assoc_artiste_id = :idArtist;*/
+  $stmt = $pdo->prepare($requete);
+  $stmt->execute();
+  $styles = $stmt->fetchAll();
+
+
+  $stylesChoice = readAll('styles');
+
+
+
 
   ?>
 
@@ -26,8 +41,8 @@
      <input type="text" name="artiste_name">
      <label for="artiste_style">Ajouter un style à l'artiste</label>
      <select name="style_id" id="artist_style">
-         <?php foreach($styles as $style){
-      echo "<option value=".$style['style_id'].">".$style['style_name']."</option>";
+         <?php foreach($stylesChoice as $choice){
+      echo "<option value=".$choice['style_id'].">".$choice['style_name']."</option>";
          }?>
      </select>
      <input type="submit" value="ajouter">
@@ -46,23 +61,32 @@
 
   */?>
 
+ /***** AFFICHAGE DES STYLES AJOUTÉES MANQUANT ***/
+
+<div class="cameron-artistes-liste">
 <?php foreach($artistes as $artiste) : ?>
 
-     <div class="cameron-genres__display">
+     <div class="cameron-artistes-liste__display">
+
          <p> Artiste : <?= $artiste["artiste_name"] ?></p>
-         <p> Styles : <?= $artiste["style_name"] ?></p>
-         <p> Genres : <?= $artiste["genre_name"] ?></p>
 
-         <a href="artiste-update-form.php?artiste_id=<?=$artiste['artiste_id']?>">Modifier</a>
-         <a onClick="return confirm('Êtes-vous sur de vouloir supprimer cette artiste?')" href="artiste-delete.php?artiste_id=<?=$artiste['artiste_id']?>">Supprimer</a>
+         <p>Styles :</p>
 
+           <?php foreach ($styles as $style) :?>
+            <?php if($style['assoc_artiste_id']==$artiste['artiste_id']) : ?>
+         <p> <?= $style["style_name"] ?></p>
+          <?php endif;endforeach; ?>
 
-
-
-
+         <button><a href="artiste-update-style-form.php?artiste_id=<?=$artiste['artiste_id']?>">Ajouter un style</a></button>
+         <button><a href="artiste-update-form.php?artiste_id=<?=$artiste['artiste_id']?>">Modifier</a></button>
+         <button><a onClick="return confirm('Êtes-vous sur de vouloir supprimer cette artiste?')" href="artiste-delete.php?artiste_id=<?=$artiste['artiste_id']?>">Supprimer l'artiste</a></button>
+         <button><a onClick="return confirm('Êtes-vous sur de vouloir supprimer cette artiste?')" href="artiste-delete-style.php?artiste_id=<?=$artiste['artiste_id']?>">Supprimer un style</a></button>
      </div>
+ <!--   <div class="cameron-artistes-liste__btn">-->
 
+
+  <!--  </div>-->
 <?php endforeach; ?>
-
+</div>
 
  <script src=""></script>

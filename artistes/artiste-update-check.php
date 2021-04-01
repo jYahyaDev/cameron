@@ -21,4 +21,17 @@ if($modif){
 
 header("location:artiste-view-all.php?message=$message");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
  ?>

@@ -18,8 +18,8 @@
 <form action="artiste-update-check.php?id=<?=$artiste['artiste_id']?>" method="post">
 
     <input type="text" name="artiste_name" value="<?= $artiste['artiste_name']?>">
+
     <input type="submit" name="submit" value="Modifier">
 
-
-
 </form>
+
