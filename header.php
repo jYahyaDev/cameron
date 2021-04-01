@@ -58,6 +58,19 @@
 
     <title>CRUD</title>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.php">Acceuil</a></li>
+            <li><a href="artistes/artiste-view-all.php">Artistes</a></li>
+            <li><a href="genres/genre-view-all.php">Genres</a></li>
+            <li><a href="styles/style-view-all.php">Styles</a></li>
+        </ul>
+
+
+    </nav>
+
+</header>
 <body>
 
 <section class="cameron-home">

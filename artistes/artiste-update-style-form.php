@@ -1,24 +1,24 @@
-<?php include("../header.php") ?>
+<?php include("../header.php");
 
-
-<?php
 
 if(isset($_GET['artiste_id'])){
 
+    // Récupération de l'id de l'artiste via la méthode GET
     $id = htmlspecialchars($_GET['artiste_id']);
-
+    // Affiche l'artiste correspondant à l'id passé en paramètre
     $artiste = read('artistes', $id);
-
-    var_dump($artiste);
-
+    //liste les styles disponible
     $styles = readAll('styles');
 
+}else{
+    header("location:artiste-view-all.php");
 }
 
 ?>
 
-<form action="artiste-update-check-style.php?id=<?=$artiste['artiste_id']?>" method="post">
 
+
+<form action="artiste-update-check-style.php?id=<?=$artiste['artiste_id']?>" method="post">
 
     <label for="artiste_style">Ajouter un style à l'artiste</label>
     <select name="style_id" id="artist_style">

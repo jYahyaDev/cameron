@@ -1,37 +1,27 @@
 
-<?php include("../header.php") ?>
+<?php include("../header.php");
 
 
-<?php
+if(isset($_GET['id']) && isset($_POST['artiste_name']) && !empty($_POST['artiste_name']) && !empty($_GET['id'])) {
 
+    $id = htmlspecialchars($_GET['id']);
+    $value = htmlspecialchars($_POST['artiste_name']);
 
-$id = htmlspecialchars($_GET['id']);
-$value = htmlspecialchars($_POST['artiste_name']);
+    $modif = update('artistes', 'artiste_name', 'artiste_id', $value, $id);
 
-$modif = update('artistes','artiste_name','artiste_id',$value,$id);
+    $message = '';
 
-$message ='';
+    if ($modif) {
+        $message = 'La modification a bien été prise en compte';
+        header("location:artiste-view-all.php?updateMsg=$message");
+    } else {
+        $message = 'Erreur lors de la modification';
+        header("location:artiste-view-all.php?updateMsg=$message");
+    };
 
-
-if($modif){
-    $message = 'La modification a bien été prise en compte';
-}else{
-    $message = 'Erreur lors de la modification';
 }
 
-header("location:artiste-view-all.php?message=$message");
 
 
 
 
-
-
-
-
-
-
-
-
-
-
- ?>

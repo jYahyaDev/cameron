@@ -25,6 +25,13 @@ function readAll($table){
       }
 
 }
+
+/**
+ * Permet de lister un seul élément via son id
+ * @param $table
+ * @param $id
+ * @return mixed
+ */
 function read($table,$id){
 
 
@@ -46,7 +53,61 @@ function read($table,$id){
 
 }
 
+/**
+ * Permet de lier l'artiste à un ou plusieurs styles via la table associative
+ * @return array
+ */
+function readAssoc()
+{
+    try {
+        $pdo = getPdo();
 
+        $requete = 'SELECT artiste_id, artiste_name, style_name, style_id, genre_name 
+                FROM assoc_artistes_styles
+                JOIN artistes ON artiste_id= assoc_artiste_id 
+                JOIN styles on style_id=assoc_style_id 
+                JOIN genres ON genre_id = style_genre_id GROUP BY artiste_name';
+
+        $stmt = $pdo->prepare($requete);
+        $stmt->execute();
+        $artistes = $stmt->fetchAll();
+
+        return $artistes;
+    } catch (PDOException $e) {
+        exit("❌🙀❌ OOPS :\n" . $e->getMessage());
+    }
+
+}
+
+/**
+ * Affiche les styles attribué à un artiste
+ * @return array
+ */
+function readStyleLink()
+{
+    try {
+        $pdo = getPdo();
+        $requete = "SELECT * FROM `styles`
+                  JOIN assoc_artistes_styles ON assoc_style_id = style_id";
+        /*WHERE assoc_artiste_id = :idArtist;*/
+        $stmt = $pdo->prepare($requete);
+        $stmt->execute();
+        $styles = $stmt->fetchAll();
+
+        return $styles;
+    } catch (PDOException $e) {
+        exit("❌🙀❌ OOPS :\n" . $e->getMessage());
+    }
+
+}
+
+/**
+ * Permet d'insérer une donnée
+ * @param string $table
+ * @param string $field1
+ * @param $value1
+ * @return string
+ */
 function create($table,$field1,$value1)
 {
     try {
@@ -68,6 +129,11 @@ function create($table,$field1,$value1)
     }
 }
 
+/**
+ * Permet de lier un style à un artiste lors de l'ajout d'un style
+ * @param $artisteId
+ * @param $styleId
+ */
 function linkAssoc($artisteId,$styleId){
     try{
 
@@ -79,7 +145,9 @@ function linkAssoc($artisteId,$styleId){
             ':assoc_artiste_id' => $artisteId,
             ':assoc_style_id' => $styleId,
         ));
+        $resultat = $prepare->rowCount();
 
+        return $resultat;
 
     } catch (PDOException $e) {
         exit("❌🙀❌ OOPS :\n" . $e->getMessage());
@@ -88,11 +156,13 @@ function linkAssoc($artisteId,$styleId){
 
 }
 
-
-
-
-
-
+/**
+ * Supprime un élément via son id
+ * @param $table
+ * @param $idTable
+ * @param $id
+ * @return int
+ */
 function delete($table,$idTable,$id)
 {
 
@@ -114,6 +184,15 @@ function delete($table,$idTable,$id)
     }
 }
 
+/**
+ * Met à jour
+ * @param $table
+ * @param $field
+ * @param $fieldId
+ * @param $newValue
+ * @param $idField
+ * @return int
+ */
 function update($table, $field,$fieldId,$newValue,$idField)
 {
 
