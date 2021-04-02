@@ -1,4 +1,4 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 
     if(isset($_POST['artiste_name']) && !empty($_POST['artiste_name']) && isset($_POST['style_id']) && !empty($_POST['style_id'])) {

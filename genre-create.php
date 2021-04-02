@@ -1,4 +1,4 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 
 if(isset($_POST['genre_name']) && !empty($_POST['genre_name']) ){

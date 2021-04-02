@@ -1,4 +1,4 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 //Récupère l'ensemble des styles
 $styles = readAll('styles','style_name');
@@ -29,6 +29,7 @@ $genres = readAll('genres','genre_name');
 
 <form action="style-create.php" method="post">
 
+    <label for="style_name">Ajoutez un nouveau style :</label>
     <input type="text" name="style_name" placeholder="Ajoutez un nouveau style">
     <label for="genre_id">Choisir le genre :</label>
     <select name="genre_id" id="artist_style">
@@ -37,6 +38,8 @@ $genres = readAll('genres','genre_name');
         }?>
     </select>
     <input type="submit" name="submit" value="Créer">
+
+    <label>Aucun genre ne correspond ?</label><button><a href="genre-view-all.php">Ajouter un genre ! </a></button>
 
 </form>
 
@@ -57,4 +60,4 @@ $genres = readAll('genres','genre_name');
 
 
 
-<?php include("../footer.php") ?>
+<?php include("footer.php") ?>

@@ -1,4 +1,4 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 //Récupération de la variable si l'utilisateur choisi de modifier
 if(isset($_POST['update'])) {
@@ -47,4 +47,4 @@ if(isset($_POST['update'])) {
 
     </form>
 
-<?php include("../footer.php") ?>
+<?php include("footer.php") ?>

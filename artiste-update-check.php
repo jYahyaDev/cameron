@@ -1,5 +1,5 @@
 
-<?php include("../header.php");
+<?php include("header.php");
 
 
 if(isset($_GET['id']) && isset($_POST['artiste_name']) && !empty($_POST['artiste_name']) && !empty($_GET['id'])) {
@@ -19,6 +19,8 @@ if(isset($_GET['id']) && isset($_POST['artiste_name']) && !empty($_POST['artiste
         header("location:artiste-view-all.php?updateMsg=$message");
     };
 
+}else{
+    header("location:artiste-view-all.php");
 }
 
 

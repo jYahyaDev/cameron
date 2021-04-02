@@ -1,4 +1,4 @@
- <?php include("../header.php") ?>
+ <?php include("header.php") ?>
 
   <?php
     //Affiche les artistes ainsi que les styles associés
@@ -85,4 +85,4 @@
 
 
 
- <?php include("../footer.php") ?>
+ <?php include("footer.php") ?>

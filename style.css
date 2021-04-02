@@ -12,7 +12,7 @@ body{
 
 .cameron-genres__display{
     width: 250px;
-    background-color: palevioletred;
+    background-color: red;
     display: flex;
 }
 

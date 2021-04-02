@@ -21,18 +21,59 @@
 
     a{
         text-decoration: none;
-        color:inherit;
+        color:black;
+
     }
 
     button{
         margin-bottom: 2px;
     }
+
+
+    header{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        height:auto;
+
+    }
+
+    /*nav{
+        background-color: lawngreen;
+        display: flex;
+        justify-content: center;
+    }*/
+
+    nav ul{
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+
+    nav ul li {
+        text-transform: uppercase;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    nav a {
+        color: #ffbd59;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+
     .cameron-artistes-liste{
         display: flex;
+        flex-wrap: wrap;
     }
     .cameron-artistes-liste__display{
         position: relative;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         width: content-box;
         height: auto;
@@ -42,16 +83,25 @@
     }
 
 
-    .cameron-artistes-liste__btn{
+    .cameron-artistes-liste__btn {
         display: flex;
         flex-direction: column;
-        background-color: antiquewhite;
-
+        background-color: green;
         width: 80%;
         margin: 0 auto;
-
         white-space: nowrap;
     }
+
+        footer{
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            background-color: black;
+            color: #ffbd59;
+            text-align: center;
+        }
 
     </style>
 
@@ -59,17 +109,20 @@
     <title>CRUD</title>
 </head>
 <header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Acceuil</a></li>
-            <li><a href="artistes/artiste-view-all.php">Artistes</a></li>
-            <li><a href="genres/genre-view-all.php">Genres</a></li>
-            <li><a href="styles/style-view-all.php">Styles</a></li>
-        </ul>
+    <div class="img-header">
+        <img src="Cameron.png" alt="logo cameron">
+    </div>
+
+<nav>
+    <ul>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="artiste-view-all.php">Artistes</a></li>
+        <li><a href="genre-view-all.php">Genres</a></li>
+        <li><a href="style-view-all.php">Styles</a></li>
+    </ul>
 
 
-    </nav>
-
+</nav>
 </header>
 <body>
 

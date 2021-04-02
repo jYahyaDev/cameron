@@ -1,4 +1,4 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 
 if(isset($_GET['artiste_id'])){
@@ -16,6 +16,7 @@ if(isset($_GET['artiste_id'])){
 
 ?>
 
+<h1>Ajouter un style à <?= htmlspecialchars($artiste['artiste_name'])?></h1>
 
 <form action="artiste-update-check-style.php?id=<?=$artiste['artiste_id']?>" method="post">
 
@@ -29,3 +30,4 @@ if(isset($_GET['artiste_id'])){
 
 </form>
 
+ <?php include('footer.php');?>

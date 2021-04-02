@@ -1,4 +1,4 @@
- <?php include("../header.php");
+ <?php include("header.php");
 
   //Récupère l'ensemble des genres
   $genres = readAll('genres','genre_name');
@@ -50,4 +50,4 @@
 
 
 
- <?php include("../footer.php") ?>
+ <?php include("footer.php") ?>

@@ -1,10 +1,10 @@
-<?php include("../header.php");
+<?php include("header.php");
 
 
 if(isset($_POST['style_name']) && !empty($_POST['style_name']) && isset($_POST['genre_id']) && !empty($_POST['genre_id']) ){
 
     $styleName = htmlspecialchars($_POST['style_name']);
-
+    //Ajout majuscule pour l'entrée des styles
     $styleName = ucfirst($styleName);
 
     $genreId = $_POST['genre_id'];
