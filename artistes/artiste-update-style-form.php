@@ -8,7 +8,7 @@ if(isset($_GET['artiste_id'])){
     // Affiche l'artiste correspondant à l'id passé en paramètre
     $artiste = read('artistes','artiste_id', $id);
     //liste les styles disponible
-    $styles = readAll('styles');
+    $styles = readAll('styles','style_name');
 
 }else{
     header("location:artiste-view-all.php");

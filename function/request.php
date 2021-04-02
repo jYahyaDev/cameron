@@ -116,9 +116,11 @@ function create($table,$field1,$value1)
 
         $requete = "INSERT INTO `$table` (`$field1`)
                      VALUES (:val1);";
+
         $prepare = $pdo->prepare($requete);
         $prepare->execute(array(
-            ':val1' => $value1
+            ':val1' => $value1,
+
         ));
         $res = $prepare->rowCount();
         $lastId = $pdo->lastInsertId();
@@ -129,6 +131,30 @@ function create($table,$field1,$value1)
         exit("❌🙀❌ OOPS :\n" . $e->getMessage());
     }
 }
+
+function createStyle($table,$field1,$field2,$value1,$value2)
+{
+    try {
+        $pdo = getPdo();
+
+        $requete = "INSERT INTO `$table` (`$field1`,`$field2`)
+                     VALUES (:val1,:val2);";
+        if(!empty($orderBy)) $requete.= "ORDER BY ".$orderBy;
+        $prepare = $pdo->prepare($requete);
+        $prepare->execute(array(
+            ':val1' => $value1,
+            ':val2' => $value2
+
+        ));
+        $res = $prepare->rowCount();
+        $lastId = $pdo->lastInsertId();
+
+        /*return $res;*/
+        return $lastId;
+    } catch (PDOException $e) {
+        exit("❌🙀❌ OOPS :\n" . $e->getMessage());
+    }
+};
 
 /**
  * Permet de lier un style à un artiste lors de l'ajout d'un style
