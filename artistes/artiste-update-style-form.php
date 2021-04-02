@@ -6,7 +6,7 @@ if(isset($_GET['artiste_id'])){
     // Récupération de l'id de l'artiste via la méthode GET
     $id = htmlspecialchars($_GET['artiste_id']);
     // Affiche l'artiste correspondant à l'id passé en paramètre
-    $artiste = read('artistes', $id);
+    $artiste = read('artistes','artiste_id', $id);
     //liste les styles disponible
     $styles = readAll('styles');
 
@@ -15,7 +15,6 @@ if(isset($_GET['artiste_id'])){
 }
 
 ?>
-
 
 
 <form action="artiste-update-check-style.php?id=<?=$artiste['artiste_id']?>" method="post">

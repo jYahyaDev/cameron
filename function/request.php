@@ -63,11 +63,11 @@ function readAssoc()
     try {
         $pdo = getPdo();
 
-        $requete = 'SELECT artiste_id, artiste_name, style_name, style_id, genre_name 
+        $requete = 'SELECT artiste_id, artiste_name, style_name, style_id
                 FROM assoc_artistes_styles
                 JOIN artistes ON artiste_id= assoc_artiste_id 
                 JOIN styles on style_id=assoc_style_id 
-                JOIN genres ON genre_id = style_genre_id GROUP BY artiste_name';
+                 GROUP BY artiste_name';
 
         $stmt = $pdo->prepare($requete);
         $stmt->execute();

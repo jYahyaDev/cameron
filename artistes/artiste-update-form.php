@@ -5,7 +5,7 @@
 
      $id = htmlspecialchars($_GET['artiste_id']);
      //Affiche l'artiste à modifier grâce à son id
-     $artiste = read('artistes', $id);
+     $artiste = read('artistes','artiste_id', $id);
  }else{
      header("location:artiste-view-all.php");
  }
