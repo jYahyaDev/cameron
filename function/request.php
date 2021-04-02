@@ -7,13 +7,14 @@ require_once('database.php');
  * @return array
  * @param string 
  */
-function readAll($table){
+function readAll($table,$orderBy=""){
 
 
       try{
           $pdo = getPdo();
 
           $requete = "SELECT * FROM `$table`";
+          if(!empty($orderBy)) $requete.= "ORDER BY ".$orderBy;
           $prepare = $pdo->prepare($requete);
           $prepare->execute();
           $res = $prepare->rowCount();
@@ -32,13 +33,13 @@ function readAll($table){
  * @param $id
  * @return mixed
  */
-function read($table,$id){
+function read($table,$field,$id){
 
 
     try{
         $pdo = getPdo();
 
-        $requete = "SELECT * FROM `$table` WHERE artiste_id = :id";
+        $requete = "SELECT * FROM `$table` WHERE `$field` = :id";
         $prepare = $pdo->prepare($requete);
         $prepare->execute([
             ":id"=>$id

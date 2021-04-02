@@ -1,6 +1,7 @@
  <?php include("../header.php");
 
-  $genres = readAll('genres');
+  //Récupère l'ensemble des genres
+  $genres = readAll('genres','genre_name');
 
   ?>
 
@@ -9,6 +10,18 @@
  <!-- affichage message ajout de genre-->
  <?php  if(isset($_GET['create'])) :?>
      <?php $msg= htmlspecialchars($_GET['create']) ?>
+     <p><?=htmlspecialchars($msg)?></p>
+ <?php endif; ?>
+
+ <!-- affichage message modification de genre-->
+ <?php  if(isset($_GET['updateMsg'])) :?>
+     <?php $msg= htmlspecialchars($_GET['updateMsg']) ?>
+     <p><?=htmlspecialchars($msg)?></p>
+ <?php endif; ?>
+
+ <!-- affichage message suppression genre-->
+ <?php  if(isset($_GET['deleteMsg'])) :?>
+     <?php $msg= htmlspecialchars($_GET['deleteMsg']) ?>
      <p><?=htmlspecialchars($msg)?></p>
  <?php endif; ?>
 
@@ -24,15 +37,16 @@
 
  <section class="cameron-genres">
 
+     <form action="genre-update-form.php" method="post">
+     <select name="genre_id" id="artist_style">
+        <?php foreach($genres as $genre){
+             echo "<option value=".htmlspecialchars($genre['genre_id']).">".htmlspecialchars($genre['genre_name'])."</option>";
+         }?>
 
-  <?php foreach($genres as $genre) :?>
-
-      <p> <?=$genre["genre_name"] ?></p>
-
-      <button><a href="artiste-update-form.php?artiste_id=<?=$artiste['artiste_id']?>">Modifier</a></button>
-      <button><a onClick="return confirm('Êtes-vous sur de vouloir supprimer cette artiste?')" href="artiste-delete.php?artiste_id=<?=$artiste['artiste_id']?>">Supprimer l'artiste</a></button>
-
-  <?php endforeach; ?>
+     </select>
+             <button type="submit" name="update" value="update">Modifier</button>
+             <button type="submit" name="delete" value="delete" onClick="return confirm('Êtes-vous sur de vouloir supprimer ce genre?')">Supprimer ce genre</button>
+     </form>
 
 
 
