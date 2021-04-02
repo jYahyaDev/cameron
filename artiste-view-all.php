@@ -25,7 +25,7 @@
      <label for="artiste_style">Ajouter un style à l'artiste</label>
      <select name="style_id" id="artist_style">
          <?php foreach($stylesChoice as $choice){
-      echo "<option value=".$choice['style_id'].">".$choice['style_name']."</option>";
+      echo "<option value=".htmlspecialchars($choice['style_id']).">".htmlspecialchars( $choice['style_name'])."</option>";
          }?>
      </select>
      <input type="submit" value="ajouter">
@@ -61,11 +61,11 @@
 
      <div class="cameron-artistes-liste__display">
 
-         <h2><?= $artiste["artiste_name"] ?></h2>
+         <h2><?= htmlspecialchars($artiste["artiste_name"]) ?></h2>
          <p>Styles :</p>
            <?php foreach ($styles as $style) :?>
             <?php if($style['assoc_artiste_id']==$artiste['artiste_id']) : ?>
-         <li><?= $style["style_name"] ?></li>
+         <li><?= htmlspecialchars($style["style_name"]); ?></li>
           <?php endif;endforeach; ?>
 
          <button><a href="artiste-update-style-form.php?artiste_id=<?=$artiste['artiste_id']?>">Ajouter un style</a></button>

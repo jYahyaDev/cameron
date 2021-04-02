@@ -5,7 +5,7 @@
 
  <div class="link homeDiv">
 
-      <a href="artiste-view-all.php">Artiste</a>
+      <a href="artiste-view-all.php">Artistes</a>
 
 
   </div>

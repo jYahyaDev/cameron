@@ -37,7 +37,7 @@ else{
 };
 
 ?>
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh" >
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" >
     <h2>Modifier le style</h2>
 
     <form action="style-update-check.php?id=<?=$style['style_id']?>" method="post">

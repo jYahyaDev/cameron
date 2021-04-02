@@ -45,7 +45,6 @@ $genres = readAll('genres','genre_name');
 
 <h2>Liste des styles</h2>
 
-<section class="cameron-genres">
 
     <form action="style-update-form.php" method="post">
         <select name="style_id" id="style_id">

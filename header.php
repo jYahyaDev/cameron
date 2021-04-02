@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <style>
 
         *{
@@ -42,7 +41,12 @@
 
     }
 
+
+    nav{
+        max-width: 100%;
+    }
     nav ul{
+        padding: 0;
         margin: 0;
         display: flex;
         justify-content: space-evenly;
@@ -78,6 +82,7 @@
         padding: 10px;
         margin: 5px;
         border-radius: 5px;
+        box-shadow: 0 10px 6px -6px #ffbd59;
     }
 
     .cameron-artistes-liste__btn {
@@ -89,25 +94,6 @@
         white-space: nowrap;
     }
 
-        footer{
-            padding: 10px;
-          /*  position: absolute;
-            bottom: 0;*/
-            width: 100%;
-            height: auto;
-            background-color: black;
-            color: #ffbd59;
-            text-align: center;
-        }
-
-        footer p{
-            margin: 0;
-        }
-        .form-update{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
         .home{
             margin-top: 80px;
@@ -140,6 +126,7 @@
         .home a:hover{
             color: #ffbd59;
             transition: 0.5s;
+            transform : scale(1,0.9)
         }
 
 
@@ -164,7 +151,7 @@
         }
         .main h2{
             color: #ffbd59;
-            text-shadow: 1px 1px 1px black;
+            text-shadow: 2px 1px 1px black;
         }
         .main li{
             margin-bottom: 10px;
@@ -187,13 +174,30 @@
                 margin-bottom: 5px;
             }
 
+            header img{
+                width: 200px ;
+            }
 
+            .home a{
+                font-size: 16px;
+                padding: 3px;
+            }
+            .home{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav ul{
+                padding: 0;
+            }
         }
 
     </style>
-
-
-    <title>CRUD</title>
+    <title>Mon catalogue</title>
+    <meta name="description" content="Catalogue de gestion d'artistes">
 </head>
 <header>
     <div class="img-header">

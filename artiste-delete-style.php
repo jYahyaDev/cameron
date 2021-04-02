@@ -27,8 +27,8 @@
  }
 
  ?>
-
- <h1>Modifier le style</h1>
+ <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" >
+ <h2>Supprimer un style</h2>
 
  <form action="artiste-delete-style-check.php" method="post">
      <label for="artiste_style">Quel style souhaitez-vous supprimer?</label>

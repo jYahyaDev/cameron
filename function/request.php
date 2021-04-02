@@ -3,12 +3,17 @@
 require_once('database.php');
 
 /**
+ * Toutes les fonctions utilisent les requêtes préparées afin de se protéger des injections SQl
+ */
+
+
+
+/**
  * Permet de lister l'ensemble des données d'une table
  * @return array
  * @param string 
  */
 function readAll($table,$orderBy=""){
-
 
       try{
           $pdo = getPdo();

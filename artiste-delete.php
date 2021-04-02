@@ -7,7 +7,7 @@ if(isset($_GET['artiste_id']) && !empty($_GET['artiste_id'])){
     $delete = delete('artistes','artiste_id',$id);
 
     $message = '';
-
+    // Si la suppression s'est bien déroulé on retourne un message à l'utilisation
     if ($delete) {
         $message = 'L\'artiste a bien été supprimé';
         header("location:artiste-view-all.php?deleteMsg=$message");

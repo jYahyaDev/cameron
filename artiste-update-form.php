@@ -11,7 +11,7 @@
  }
  
  ?>
-
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" >
 <h2>Modifier les informations de l'artiste</h2>
 
 <form action="artiste-update-check.php?id=<?=$artiste['artiste_id']?>" method="post">
