@@ -1,4 +1,4 @@
-<?php include("header.php");
+<?php include("function/request.php");
 
 //Récupération de la variable si l'utilisateur choisi de modifier
 if(isset($_POST['update'])) {
@@ -37,6 +37,10 @@ if(isset($_POST['update'])) {
 
 ?>
 
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh" >
+
+
+
     <h2>Modifier le genre</h2>
 
     <form action="genre-update-check.php?id=<?=$genre['genre_id']?>" method="post">
@@ -46,5 +50,7 @@ if(isset($_POST['update'])) {
         <input type="submit" name="submit" value="Modifier">
 
     </form>
+
+</div>
 
 <?php include("footer.php") ?>

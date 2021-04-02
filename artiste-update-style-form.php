@@ -15,7 +15,7 @@ if(isset($_GET['artiste_id'])){
 }
 
 ?>
-
+<div class="main">
 <h1>Ajouter un style à <?= htmlspecialchars($artiste['artiste_name'])?></h1>
 
 <form action="artiste-update-check-style.php?id=<?=$artiste['artiste_id']?>" method="post">

@@ -4,8 +4,8 @@
   $genres = readAll('genres','genre_name');
 
   ?>
-
- <h1>Ajouter un genre </h1>
+ <div class="main">
+ <h2>Ajouter un genre </h2>
 
  <!-- affichage message ajout de genre-->
  <?php  if(isset($_GET['create'])) :?>
@@ -26,6 +26,7 @@
  <?php endif; ?>
 
 
+
  <form action="genre-create.php" method="post">
 
      <input type="text" name="genre_name" placeholder="Ajoutez un nouveau genre">
@@ -33,9 +34,9 @@
 
  </form>
 
- <h1>Genres</h1>
+ <h2>Liste des genres</h2>
 
- <section class="cameron-genres">
+ <div class="content-column">
 
      <form action="genre-update-form.php" method="post">
      <select name="genre_id" id="artist_style">
@@ -48,6 +49,6 @@
              <button type="submit" name="delete" value="delete" onClick="return confirm('Êtes-vous sur de vouloir supprimer ce genre?')">Supprimer ce genre</button>
      </form>
 
-
+ </div>
 
  <?php include("footer.php") ?>

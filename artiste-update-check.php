@@ -1,5 +1,5 @@
 
-<?php include("header.php");
+<?php include("function/request.php");
 
 
 if(isset($_GET['id']) && isset($_POST['artiste_name']) && !empty($_POST['artiste_name']) && !empty($_GET['id'])) {

@@ -1,4 +1,4 @@
-<?php include("header.php");
+<?php include("function/request.php");
 
 //Récupération de la variable si l'utilisateur choisi de modifier
 if(isset($_POST['update'])) {
@@ -11,12 +11,11 @@ if(isset($_POST['update'])) {
 
     }
 
-    //Si choix de supprimer
-}elseif(isset($_POST['delete'])){
+}elseif(isset($_POST['delete'])) {
 
     $id = htmlspecialchars($_POST['style_id']);
-    //appel de la fonction delete pour supprimer le style via son id
-    $delete = delete('styles','style_id',$id);
+//appel de la fonction delete pour supprimer le style via son id
+    $delete = delete('styles', 'style_id', $id);
 
     $message = '';
 
@@ -29,18 +28,20 @@ if(isset($_POST['update'])) {
     };
 
 
-}else{
+}
+
+else{
     //Redirection
     header("location:style-view-all.php");
 
 };
 
 ?>
-
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh" >
     <h2>Modifier le style</h2>
 
     <form action="style-update-check.php?id=<?=$style['style_id']?>" method="post">
-        <label for="style_name">Modifier le nom de l'artiste : </label>
+        <label for="style_name">Modifier le style : </label>
         <input type="text" name="style_name" value="<?= $style['style_name']?>">
 
         <input type="submit" name="submit" value="Modifier">

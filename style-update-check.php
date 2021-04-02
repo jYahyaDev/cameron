@@ -1,5 +1,5 @@
 
-<?php include("header.php");
+<?php include("function/request.php");
 
 
 if(isset($_GET['id']) && isset($_POST['style_name']) && !empty($_POST['style_name']) && !empty($_GET['id'])) {
@@ -19,7 +19,7 @@ if(isset($_GET['id']) && isset($_POST['style_name']) && !empty($_POST['style_nam
         header("location:style-view-all.php?updateMsg=$message");
     };
 
-}else{
+} else{
     header("location:style-view-all.php");
 }
 

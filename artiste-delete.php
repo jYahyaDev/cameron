@@ -1,4 +1,4 @@
-<?php include("header.php");
+<?php include("function/request.php");
 
 if(isset($_GET['artiste_id']) && !empty($_GET['artiste_id'])){
 

@@ -1,5 +1,5 @@
 
-<?php include("header.php");
+<?php include("function/request.php");
 
 if(isset($_POST['style_id']) && !empty($_POST['style_id']) && isset($_GET['id']) && !empty($_GET['id'])){
 

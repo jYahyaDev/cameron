@@ -1,14 +1,10 @@
-</section>
+</div>
 
 <footer>
 
-    <p>Footer du projet</p>
+  
 
 </footer>
 
-
-
-
-
-
 </body>
+</html>

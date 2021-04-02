@@ -5,8 +5,8 @@ $styles = readAll('styles','style_name');
 //Récupère l'ensemble des genres
 $genres = readAll('genres','genre_name');
 ?>
-
-<h1>Ajouter un style </h1>
+<div class="main">
+<h2>Ajouter un style </h2>
 
 <!-- affichage message ajout de style-->
 <?php  if(isset($_GET['create'])) :?>
@@ -43,7 +43,7 @@ $genres = readAll('genres','genre_name');
 
 </form>
 
-<h1>Liste des styles</h1>
+<h2>Liste des styles</h2>
 
 <section class="cameron-genres">
 

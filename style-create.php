@@ -1,4 +1,4 @@
-<?php include("header.php");
+<?php include("function/request.php");
 
 
 if(isset($_POST['style_name']) && !empty($_POST['style_name']) && isset($_POST['genre_id']) && !empty($_POST['genre_id']) ){

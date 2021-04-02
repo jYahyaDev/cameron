@@ -7,16 +7,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
     <style>
+
         *{
             box-sizing: border-box;
         }
 
     body{
-    padding: 0;
-        background-color: gray;
+        padding: 0;
+        margin: 0;
+        background-color: beige;
+        height: 100vh;
+
     }
 
     a{
@@ -39,13 +42,8 @@
 
     }
 
-    /*nav{
-        background-color: lawngreen;
-        display: flex;
-        justify-content: center;
-    }*/
-
     nav ul{
+        margin: 0;
         display: flex;
         justify-content: space-evenly;
         list-style-type: none;
@@ -53,7 +51,7 @@
 
     nav ul li {
         text-transform: uppercase;
-        margin: 10px;
+        margin: 5px;
         padding: 5px;
     }
 
@@ -64,7 +62,6 @@
     nav a:hover {
         color: white;
     }
-
 
     .cameron-artistes-liste{
         display: flex;
@@ -77,11 +74,11 @@
         flex-direction: column;
         width: content-box;
         height: auto;
-        background-color: aquamarine;
+        background-color: darkgrey;
         padding: 10px;
         margin: 5px;
+        border-radius: 5px;
     }
-
 
     .cameron-artistes-liste__btn {
         display: flex;
@@ -94,13 +91,103 @@
 
         footer{
             padding: 10px;
-            position: absolute;
-            bottom: 0;
+          /*  position: absolute;
+            bottom: 0;*/
             width: 100%;
             height: auto;
             background-color: black;
             color: #ffbd59;
             text-align: center;
+        }
+
+        footer p{
+            margin: 0;
+        }
+        .form-update{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .home{
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+            .homeDiv{
+                margin: 5px;
+                height: 200px;
+                width: 25%;
+                border-radius: 5px;
+                position: relative;
+                align-content: center;
+                box-shadow: 0 10px 6px -6px #ffbd59;
+            }
+
+            .home a{
+                font-size: 24px;
+                padding: 5px;
+                text-transform: uppercase;
+                font-weight: bold;
+                display: block;
+                height: 100%;
+                color: white;
+                text-shadow: 2px 2px 3px black;
+            }
+        .home a:hover{
+            color: #ffbd59;
+            transition: 0.5s;
+        }
+
+
+        .home > div:nth-child(1){
+           background: url("images/artistes.jpg") no-repeat center;
+            background-size: cover;
+        }
+        .home >div:nth-child(2){
+            background: url("images/styles.jpg") no-repeat center;
+            background-size: cover;
+        }
+        .home div:nth-child(3){
+
+            background: url("images/genres.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main h2{
+            color: #ffbd59;
+            text-shadow: 1px 1px 1px black;
+        }
+        .main li{
+            margin-bottom: 10px;
+        }
+
+
+        @media screen and (max-width: 768px){
+            .homeDiv{
+
+                width: 30%;
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+            }
+
+            input{
+                margin-bottom: 5px;
+            }
+
+
         }
 
     </style>
@@ -110,7 +197,7 @@
 </head>
 <header>
     <div class="img-header">
-        <img src="Cameron.png" alt="logo cameron">
+        <img src="./images/Cameron.png" alt="logo cameron">
     </div>
 
 <nav>
@@ -126,5 +213,4 @@
 </header>
 <body>
 
-<section class="cameron-home">
 

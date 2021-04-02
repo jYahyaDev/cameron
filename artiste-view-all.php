@@ -9,8 +9,7 @@
     $stylesChoice = readAll('styles');
 
   ?>
-
- <h1>Bienvenue sur la page dédié aux artistes</h1>
+<div class="main">
 
  <h2>Ajouter un artiste</h2>
   <!--Ajout d'un message pour indiquer le résultat de la requête à l'utilisateur-->
@@ -62,13 +61,11 @@
 
      <div class="cameron-artistes-liste__display">
 
-         <p> Artiste : <?= $artiste["artiste_name"] ?></p>
-
+         <h2><?= $artiste["artiste_name"] ?></h2>
          <p>Styles :</p>
-
            <?php foreach ($styles as $style) :?>
             <?php if($style['assoc_artiste_id']==$artiste['artiste_id']) : ?>
-         <p> <?= $style["style_name"] ?></p>
+         <li><?= $style["style_name"] ?></li>
           <?php endif;endforeach; ?>
 
          <button><a href="artiste-update-style-form.php?artiste_id=<?=$artiste['artiste_id']?>">Ajouter un style</a></button>
@@ -85,4 +82,4 @@
 
 
 
- <?php include("footer.php") ?>
+<!-- --><?php /*include("footer.php")*/?>
