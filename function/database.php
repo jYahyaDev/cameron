@@ -5,7 +5,7 @@ function getPdo(){
 
   //Instance de la classe PDO
   try{
-      $pdo = new PDO('mysql:tyjtyjtj;dbname=hu15z_dev5;charset=utf8', 'tyjtyjtyjtyjt', 'tyjtyjtjtyjtjj', [
+      $pdo = new PDO('mysql:host=localhost;dbname=cameron', 'jyahya', 'Azerty30900!', [
           PDO::ATTR_EMULATE_PREPARES   => false,
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
           PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

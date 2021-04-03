@@ -69,6 +69,7 @@
 
     .cameron-artistes-liste{
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
     .cameron-artistes-liste__display{
@@ -161,7 +162,7 @@
         @media screen and (max-width: 768px){
             .homeDiv{
 
-                width: 30%;
+                width: 50%;
             }
 
             form{
@@ -183,7 +184,7 @@
                 padding: 3px;
             }
             .home{
-                margin-top: 20px;
+                margin-top: 15px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

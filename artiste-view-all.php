@@ -2,12 +2,14 @@
 
   <?php
     //Affiche les artistes ainsi que les styles associés
-    $artistes = readAssoc();
+    /*$artistes = readAssoc();*/
+  $artistes = readAll('artistes');
     //Affiche les styles de chaque artistes
     $styles = readStyleLink();
     //Liste l'ensemble des styles disponible lors de la création d'un artiste
     $stylesChoice = readAll('styles');
 
+    $listes = readAll('artistes');
   ?>
 <div class="main">
 
@@ -17,8 +19,6 @@
    <?php $msg= htmlspecialchars($_GET['msg']) ?>
     <p><?=htmlspecialchars($msg)?></p>
   <?php endif; ?>
-
-
 
  <form action="artiste-create.php" method="post">
      <input type="text" name="artiste_name" placeholder="Entrez le nom de l'artiste">
@@ -31,7 +31,9 @@
      <input type="submit" value="ajouter">
  </form>
 
- <h2>Listes des artistes</h2>
+
+ <h2>Listes des artistes et leurs styles</h2>
+
 
 <!-- affichage message ajout de style-->
  <?php  if(isset($_GET['styleMsg'])) :?>
@@ -57,6 +59,8 @@
 
 
  <div class="cameron-artistes-liste">
+
+<!-- Liste l'ensemble des artistes et leurs styles associés-->
 <?php foreach($artistes as $artiste) : ?>
 
      <div class="cameron-artistes-liste__display">
@@ -65,8 +69,9 @@
          <p>Styles :</p>
            <?php foreach ($styles as $style) :?>
             <?php if($style['assoc_artiste_id']==$artiste['artiste_id']) : ?>
-         <li><?= htmlspecialchars($style["style_name"]); ?></li>
-          <?php endif;endforeach; ?>
+            <li><?= htmlspecialchars($style["style_name"]); ?></li>
+
+               <?php endif;endforeach; ?>
 
          <button><a href="artiste-update-style-form.php?artiste_id=<?=$artiste['artiste_id']?>">Ajouter un style</a></button>
          <button><a href="artiste-update-form.php?artiste_id=<?=$artiste['artiste_id']?>">Modifier</a></button>
@@ -80,6 +85,3 @@
 
 
 
-
-
-<!-- --><?php /*include("footer.php")*/?>
